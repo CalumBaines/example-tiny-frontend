@@ -24,7 +24,7 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
             target="_blank"
             rel="noreferrer"
           >
-            tiny frontend
+            tiny frontend hello
           </a>{" "}
           🐰 , I was deployed from{" "}
           <a
