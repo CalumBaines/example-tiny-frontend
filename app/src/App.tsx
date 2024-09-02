@@ -1,5 +1,10 @@
+import { CounterProvider } from "../context/CounterContext";
 import ExampleTinyFrontend from "../lib";
 
-const App = () => <ExampleTinyFrontend name={"Test"} />;
+const App = () => (
+  <CounterProvider>
+    <ExampleTinyFrontend name={"test"} />
+  </CounterProvider>
+);
 
 export default App;

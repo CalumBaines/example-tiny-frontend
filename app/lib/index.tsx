@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { ExampleTinyFrontendProps } from "../../contract/src/props";
+import { useCounter } from "../context/CounterContext";
 import { Button } from "./button";
 import styles from "./index.module.css";
 
@@ -8,9 +9,9 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
   name,
   onCounterChange,
 }) => {
-  const [value, setValue] = useState(0);
+  const { counter, setCounter } = useCounter();
 
-  useEffect(() => onCounterChange?.(value), [value, onCounterChange]);
+  useEffect(() => onCounterChange?.(counter), [counter, onCounterChange]);
 
   return (
     <div className={styles.container}>
@@ -24,7 +25,7 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
             target="_blank"
             rel="noreferrer"
           >
-            tiny frontend hello
+            tiny frontend lksdfjdfj
           </a>{" "}
           🐰 , I was deployed from{" "}
           <a
@@ -38,11 +39,11 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
           loaded at runtime!
         </p>
         <p>
-          You pressed my button <strong>{value} times</strong>!
+          You pressed my button <strong>{counter} times</strong>!
         </p>
       </div>
 
-      <Button onClick={() => setValue((value) => value + 1)}>
+      <Button onClick={() => setCounter((count: number) => count + 1)}>
         Press me Remix Europe!
       </Button>
     </div>
