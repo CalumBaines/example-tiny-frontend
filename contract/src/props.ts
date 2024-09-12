@@ -1,4 +1,7 @@
+import { SearchResult } from "../context/ResultsContext";
+
 export interface ExampleTinyFrontendProps {
-  name: string;
-  onCounterChange?: (counter: number) => void;
+  results?: SearchResult[];
+  onResultSelected: (url: string) => void;
+  onResultsFetch?: (results: SearchResult[]) => void;
 }
